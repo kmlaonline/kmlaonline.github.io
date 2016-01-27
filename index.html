@@ -59,11 +59,11 @@
                                         '</a>' +
                                     '</div>' +
                                  '<div id="collapse-' + prefix + key + '" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-' + prefix + key + '">' +
-                                    obj.key.description +
+                                    obj[key].description +
                                  '</div>' +
                             '</div>');
-                    if('nested' in obj.key) {
-                        showDocs($(dom).children('.card').children('#collapse-' + prefix + key), obj.key.nested, prefix + key);
+                    if('nested' in obj[key]) {
+                        showDocs($(dom).children('.card').children('#collapse-' + prefix + key), obj[key].nested, prefix + key);
                     }
                 }
             }
