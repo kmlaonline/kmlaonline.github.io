@@ -34,11 +34,11 @@
                 for (var key in obj) {
                     $(dom).append('<div class="card">' +
                                     '<div class="card-header" role="tab" id="heading-' + prefix + key + '">' +
-                                        '<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse-' + prefix + key + '" aria-expanded="false" aria-controls="collapse-' + prefix + key + '">' +
+                                        '<a class="collapsed" data-toggle="collapse" data-target="#collapse-' + prefix + key + '">' +
                                             key +
                                         '</a>' +
                                     '</div>' +
-                                 '<div id="collapse-' + prefix + key + '" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-' + prefix + key + '"><div class="card-block"><p class="card-text">' +
+                                 '<div id="collapse-' + prefix + key + '" class="panel-collapse collapse" role="tabpanel"><div class="card-block"><p class="card-text">' +
                                     obj[key].description +
                                  '</p></div></div>' +
                             '</div>');
