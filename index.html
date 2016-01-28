@@ -18,16 +18,45 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" crossorigin="anonymous"></script>
         <script>
             var data = {
-                test: {
-                    description: "test",
+                css: {
+                    description: "각 페이지마다 다른 CSS가 저장되어있어요. 예를 들어, 게시판 글과 관련된 CSS는 /css/content/board.css에 있어요. CSS 파일의 이름과 위치는 대응되는 php 파일과 같아야 해요. 예를 들어, /css/content/board.css는 /src/content/board.php와 대응되고, /css/content/user/view.css는 /src/content/user/view.css와 대응되요. 차차 여기의 CSS를 SASS로 바꿀 계획이에요."
+                },
+                fonts: {
+                    description: "웹사이트의 날씨 아이콘 같은 symbolic font의 저장 위치이에요."
+                },
+                images: {
+                    description: "사이트에 필요한 이미지들이에요."
+                },
+                js: {
+                    description: "사이트에 필요한 javascript 파일들이에요. 외부 library를 제외하고 실제로 편집할 필요가 있는 파일은 script.js랑 content 폴더 안의 내용이에요.",
                     nested: {
-                        a: {
-                            description: "lol",
+                        content: {
+                            description: "각 페이지마다 다른 js가 저장되어있어요. 예를 들어, 로그인 페이지와 관련된 함수는 모두 /js/content/user/login.js에 있어요. js 파일의 이름과 위치는 대응되는 php 파일과 같아야 해요. 예를 들어, /js/content/user/login.js는 /src/content/user/login.php와 대응되요."
+                        },
+                        "script.js": {
+                            description: "사이트에 전반적으로 필요한 자바스크립트가 있어요. 예를 들어, 모든 페이지에 포함된 상단바의 애니메이션을 담당하는 코드도 여기에 있어요. 지금은 좀 필요 없는 코드가 있어서, 앞으로 특정 페이지에만 해당되는 코드는 /js/content 폴더로 뺄 생각이에요."
                         }
                     }
                 },
-                test2: {
-                    description: "??"
+                lang: {
+                    description: "큼온의 언어 설정이지만, 사실 언어는 ko-kr, 즉 한국어밖에 없어요! ㅋㅋㅋ 어차피 큼온에 다른 언어 지원하지 않을거니까, 이 폴더는 크게 신경쓰지 않아요 되요."
+                },
+                sass: {
+                    description: "SASS는 CSS에 여러가지 기능을 추가해 편리하게 만든 언어에요. 큼온은 SASS 중에서도 SCSS를 쓰며, Compass라는 library를 사용해요. SASS는 CSS와 달리 변수도 지원하고, nesting도 되어서 똑같은 코드를 ctrl+c, ctrl+v 할 필요를 없게 해서 편리해요. 앞으로 CSS 코드를 모두 SCSS로 이전시킬 계획이에요.<br>여기 있는 SASS 파일을 바꾸면 자동으로 컴파일되어서 브라우저가 읽을 수 있는 CSS파일로 변환되니, 걱정하지 않고 마음 편하게 SASS파일만 편집하면 되요.",
+                    nested: {
+                        "_bootstrap-variables.scss": {
+                            description: "큼온은 bootstrap이란 웹 프레임워크를 사용해요. Bootstrap과 관련된 변수들이 이 파일에 저장되어있어요."
+                        },
+                        "gradients.scss": {
+                            description: "큼온의 버튼과 몇몇 패널을 납작하지 않고 볼록볼록하게 만들어요. 사용자가 테마 설정에서 볼록볼록한 테마를 활성화했을 때만 사용되요."
+                        },
+                        "screen.scss": {
+                            description: "큼온의 전반적인 모양을 설명하는 파일이에요. 지금 좀 난잡해서 정리가 필요해요."
+                        },
+                        "square.css": {
+
+                        }
+                    }
                 }
             };
             function showDocs(dom, obj, prefix) {
@@ -41,6 +70,8 @@
                                  '</p></div></div>' +
                             '</div>');
                     if('nested' in obj[key]) {
+                        var nested = $(dom).children('.card').children('#collapse-' + prefix + key).children('.card-block');
+                        nested.append('<div id="accordion" role="tablist" aria-multiselectable="true"></div>')
                         showDocs($(dom).children('.card').children('#collapse-' + prefix + key).children('.card-block'), obj[key].nested, prefix + key);
                     }
                 }
