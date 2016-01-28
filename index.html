@@ -19,7 +19,7 @@
         <script>
             var data = {
                 css: {
-                    description: "각 페이지마다 다른 CSS가 저장되어있어요. 예를 들어, 게시판 글과 관련된 CSS는 /css/content/board.css에 있어요. CSS 파일의 이름과 위치는 대응되는 php 파일과 같아야 해요. 예를 들어, /css/content/board.css는 /src/content/board.php와 대응되고, /css/content/user/view.css는 /src/content/user/view.css와 대응되요. 차차 여기의 CSS를 SASS로 바꿀 계획이에요."
+                    description: "각 페이지마다 다른 CSS가 저장되어있어요.<br>예를 들어, 게시판 글과 관련된 CSS는 /css/content/board.css에 있어요.<br><br>CSS 파일의 이름과 위치는 대응되는 php 파일과 같아야 해요.<br>예를 들어, /css/content/board.css는 /src/content/board.php와 대응되고, /css/content/user/view.css는 /src/content/user/view.css와 대응되요.<br><br>차차 여기의 CSS를 SASS로 바꿀 계획이에요."
                 },
                 fonts: {
                     description: "웹사이트의 날씨 아이콘 같은 symbolic font의 저장 위치이에요."
@@ -28,51 +28,102 @@
                     description: "사이트에 필요한 이미지들이에요."
                 },
                 js: {
-                    description: "사이트에 필요한 javascript 파일들이에요. 외부 library를 제외하고 실제로 편집할 필요가 있는 파일은 script.js랑 content 폴더 안의 내용이에요.",
+                    description: "사이트에 필요한 javascript 파일들이에요.<br>외부 library가 아닌, 편집할 수 있는 script.js랑 content 폴더 안의 내용이에요.",
                     nested: {
                         content: {
-                            description: "각 페이지마다 다른 js가 저장되어있어요. 예를 들어, 로그인 페이지와 관련된 함수는 모두 /js/content/user/login.js에 있어요. js 파일의 이름과 위치는 대응되는 php 파일과 같아야 해요. 예를 들어, /js/content/user/login.js는 /src/content/user/login.php와 대응되요."
+                            description: "각 페이지마다 다른 js가 저장되어있어요.<br>예를 들어, 로그인 페이지와 관련된 함수는 모두 /js/content/user/login.js에 있어요.<br><br>js 파일의 이름과 위치는 대응되는 php 파일과 같아야 해요.<br>예를 들어, /js/content/user/login.js는 /src/content/user/login.php와 대응되요."
                         },
                         "script.js": {
-                            description: "사이트에 전반적으로 필요한 자바스크립트가 있어요. 예를 들어, 모든 페이지에 포함된 상단바의 애니메이션을 담당하는 코드도 여기에 있어요. 지금은 좀 필요 없는 코드가 있어서, 앞으로 특정 페이지에만 해당되는 코드는 /js/content 폴더로 뺄 생각이에요."
+                            description: "사이트에 전반적으로 필요한 자바스크립트가 있어요.<br>예를 들어, 모든 페이지에 포함된 상단바의 애니메이션에 대한 코드는 여기에 있어요."
                         }
                     }
                 },
                 lang: {
-                    description: "큼온의 언어 설정이지만, 사실 언어는 ko-kr, 즉 한국어밖에 없어요! ㅋㅋㅋ 어차피 큼온에 다른 언어 지원하지 않을거니까, 이 폴더는 크게 신경쓰지 않아요 되요."
+                    description: "큼온의 언어 설정이지만, 사실 지원하는 언어는 ko-kr, 즉 한국어밖에 없어요.<br>다른 언어 지원할 계획은 없으니 신경쓸 필요 없어요."
                 },
                 sass: {
-                    description: "SASS는 CSS에 여러가지 기능을 추가해 편리하게 만든 언어에요. 큼온은 SASS 중에서도 SCSS를 쓰며, Compass라는 library를 사용해요. SASS는 CSS와 달리 변수도 지원하고, nesting도 되어서 똑같은 코드를 ctrl+c, ctrl+v 할 필요를 없게 해서 편리해요. 앞으로 CSS 코드를 모두 SCSS로 이전시킬 계획이에요.<br>여기 있는 SASS 파일을 바꾸면 자동으로 컴파일되어서 브라우저가 읽을 수 있는 CSS파일로 변환되니, 걱정하지 않고 마음 편하게 SASS파일만 편집하면 되요.",
+                    description: "SASS는 CSS를 확장한 언어에요. SASS는 그냥 CSS와 달리 변수가 있어서 ctrl+c, ctrl+v를 안 해도 되서 편리해요.<br><br>큼온은 SASS 중에서도 SCSS를 쓰고, Compass라는 library를 사용해요.<br><br><a href='http://sass-lang.com/guide'>SASS 관련 정보</a><br><a href='http://compass-style.org/'>compass 관련 정보</a><br><br>앞으로 CSS 코드를 모두 SCSS로 이전시킬 계획이에요.<br>여기 있는 SASS 파일을 바꾸면 자동으로 컴파일되어서 브라우저가 읽을 수 있는 CSS파일로 변환되어요.",
                     nested: {
                         "_bootstrap-variables.scss": {
-                            description: "큼온은 bootstrap이란 웹 프레임워크를 사용해요. Bootstrap과 관련된 변수들이 이 파일에 저장되어있어요."
+                            description: "큼온은 bootstrap이란 웹 프레임워크를 사용해요.<br>Bootstrap과 관련된 변수들이 이 파일에 저장되어있어요."
                         },
                         "gradients.scss": {
-                            description: "큼온의 버튼과 몇몇 패널을 납작하지 않고 볼록볼록하게 만들어요. 사용자가 테마 설정에서 볼록볼록한 테마를 활성화했을 때만 사용되요."
+                            description: "큼온의 버튼과 몇몇 패널을 납작하지 않고 볼록볼록하게 만들어요.<br>사용자가 테마 설정에서 볼록볼록한 테마를 활성화했을 때만 사용되요."
                         },
                         "screen.scss": {
-                            description: "큼온의 전반적인 모양을 설명하는 파일이에요. 지금 좀 난잡해서 정리가 필요해요."
+                            description: "큼온의 전반적인 모양을 설명하는 파일이에요.<br>지금 좀 난잡해서 정리가 필요해요."
                         },
                         "square.css": {
-
+                            description: "큼온의 모든 모서리를 둥글지 않고 네모나게 만들어요.<br>사용자가 테마 설정에서 네모네모난 테마를 활성화했을 때만 사용되요."
                         }
                     }
+                },
+                src: {
+                    description: "사이트의 핵심인 php 코드가 있어요. 여러개의 파일이 좀 복잡하게 엮여 있지만 깊숙한 곳만 건드리지 않으면 어렵지 않아요.",
+                    nested: {
+                        contents: {
+                          description: "큼온의 각 페이지를 출력하는 역할을 해요.<br>예를 들어, /src/contents/main.php는 메인 페이지, /src/user/login.php는 로그인 페이지, 이런 식이에요.<br>여기의 모든 파일은함수 printContent()를 정의해야 해요."
+                        },
+                        header: {
+                            description: "상단바 같이 모든 페이지에 공통으로 해당되는 요소가 여기에 있어요."
+                        },
+                        lib: {
+                            description: "큼온에 필요한 외부 라이브러리(날씨 등)이 있어요."
+                        },
+                        process: {
+                            description: "ajax로 큼온의 데이터를 수정해요.<br>예를 들어, /src/process/user/updatelayout.php는 레이아웃 저장을 해요."
+                        },
+                        soreeengine: {
+                            description: "큼온 게시판 엔진이에요. 건드리면 머리아파요."
+                        },
+                        "lib.php": {
+                            description: "큼온의 php 파일에서 자주 사용되는 함수가 여기에 모여있어요."
+                        }
+                    }
+                },
+                swfupload: {
+                    description: "큼온 게시판의 파일 업로드를 담당하는 라이버러리에요.<br>플래시를 안 사용하는 라이브러리로 대체하면 좋겠지만, 여기저기에 코드가 꼬여있어서 쉽지는 않을거에요."
+                },
+                theme: {
+                    description: "예전엔 사이트의 전체적인 모양과 관련된 CSS와 이미지를 여기에 놓았었는데, 앞으로는 SASS로 바꿀 계획이에요."
+                },
+                ".gitignore": {
+                    description: "Git에서 제외되는 파일의 목록이에요. data같은 폴더는 코드가 아니니까 git에서 제외되요."
+                },
+                ".htaccess": {
+                    description: "url을 쓰기 쉽게 변환하는 규칙들이 저장되어있어요.<br>예를 들어, kmlaonline.net/searchall은 kmlaonline.net/index.php?action=searchall로 변환되요."
+                },
+                "index.php": {
+                    description: "모든 요청은 처음에 index.php를 거쳐요.<br>그 요청이 무엇인지에 따라서 index.php가 알맞은 파일을 처리해요.<br>예를 들어, 데스크탑이면 index.direct.php, 모바일이면 index.mobile.php가 require되고, 각 페이지에 알맞는 /src/content 내의 php 파일이 include되요."
+                },
+                "index.ajax.php": {
+                    description: "ajax요청을 처리하기 위한 페이지를 만들어요."
+                },
+                "index.direct.php": {
+                    description: "데스크탑 요청은 index.direct.php가 처리해요.<br>관련된 CSS, 상단바 등 공통적인 부분을 모두 포함시킨 다음 해당되는 /src/content 내의 php 파일의 printContent()함수를 불러서 페이지를 만들어요."
+                },
+                "index.mobile.php": {
+                    description: "index.direct.php의 모바일 버전이에요."
+                },
+                "process.php": {
+                    description: "/src/process/ 안의 해당되는 php 파일을 실행해요."
                 }
             };
             function showDocs(dom, obj, prefix) {
                 for (var key in obj) {
+                    var nodotkey = key.replace(/\./g,'');
                     $(dom).append('<div class="card">' +
-                                    '<div class="card-header collapsed" style="cursor: pointer" data-toggle="collapse" data-target="#collapse-' + prefix + key.substring(0, 2) + '" role="tab" id="heading-' + prefix + key.substring(0, 2) + '">' +
+                                    '<div class="card-header collapsed" style="cursor: pointer" data-toggle="collapse" data-target="#collapse-' + prefix + nodotkey + '" role="tab" id="heading-' + prefix + nodotkey + '">' +
                                             key +
                                     '</div>' +
-                                 '<div id="collapse-' + prefix + key.substring(0, 2) + '" class="panel-collapse collapse" role="tabpanel"><div class="card-block"><p class="card-text">' +
+                                 '<div id="collapse-' + prefix + nodotkey + '" class="panel-collapse collapse" role="tabpanel"><div class="card-block"><p class="card-text">' +
                                     obj[key].description +
                                  '</p></div></div>' +
                             '</div>');
                     if('nested' in obj[key]) {
-                        var nested = $(dom).children('.card').children('#collapse-' + prefix + key.substring(0, 2)).children('.card-block');
+                        var nested = $(dom).children('.card').children('#collapse-' + prefix + nodotkey).children('.card-block');
                         nested.append('<div id="accordion" role="tablist" aria-multiselectable="true"></div>')
-                        showDocs($(dom).children('.card').children('#collapse-' + prefix + key.substring(0, 2)).children('.card-block'), obj[key].nested, prefix + key.substring(0, 2));
+                        showDocs($(dom).children('.card').children('#collapse-' + prefix + nodotkey).children('.card-block'), obj[key].nested, prefix + nodotkey);
                     }
                 }
             }
