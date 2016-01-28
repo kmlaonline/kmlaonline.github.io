@@ -72,7 +72,7 @@
                     if('nested' in obj[key]) {
                         var nested = $(dom).children('.card').children('#collapse-' + prefix + key).children('.card-block');
                         nested.append('<div id="accordion" role="tablist" aria-multiselectable="true"></div>')
-                        showDocs($(dom).children('.card').children('#collapse-' + prefix + key).children('.card-block'), obj[key].nested, prefix + key);
+                        showDocs($(dom).children('.card').children('#collapse-' + prefix + key).children('.card-block'), obj[key].nested, prefix + key.substring(0, 2));
                     }
                 }
             }
